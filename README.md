@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _{Word Frequency}_
 
-#### _{Date of current version}_
+#### _An application that returns the number of times a word is repeated in a phrase, {September 16, 2016}_
 
-#### By _**Martin Cartledge**_
+#### By _**Angela Smith**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_{This website will allow a user to input a word and a phrase; the program will then display how many times that word was used in that phrase.}_
 
 ## Specifications
 
@@ -21,51 +21,32 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 _In Terminal:_
 
-`git clone 'URL'`
-
-`$ cd 'directory name'`
-
-`$ composer install`
-
-`$ cd web`
-
-`$ php -S localhost:8000`
-
-_In Browser:_
-
-`localhost:8000`
+* Clone the repository
+* Using the command line, navigate to the project's root directory
+* Install dependencies by running $ composer install
+* Navigate to the /web directory and start a local server with $ php -S localhost:8000
+* Open a browser and go to the address http://localhost:8000 to view the application\
 
 ## Known Bugs
 
-_None yet_
+_There are no known bugs at this time_
 
 ## Support and contact details
 
-_Martin Cartledge: martincartledge@icloud.com_
+_Angela Smith: avksmit2@gmail.com_
 
 ## Technologies Used
 
 _HTML,
 CSS,
-JS,
+Bootstrap,
 PHP,
 Silex,
-Twig_
+Twig,
+PHPUnit_
 
 ### License
 
 *This webpage is licensed under the MIT license.*
 
-Copyright (c) 2016 **_Martin Cartledge_**
-
-### Notes
-
-_Copy Directory -> Make New Directory:_
-
-`cp -r srcdirectory newdirectory`
-
-`rm -rf .git`
-
-`cd newdirectory`
-
-`git init`
+Copyright (c) 2016 **_Angela Smith_**
