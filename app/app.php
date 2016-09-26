@@ -6,6 +6,9 @@
     use Symfony\Component\Debug\Debug;
     Debug::enable();
 
+    use Symfony\Component\HttpFoundation\Request;
+    Request::enableHttpMethodParameterOverride();
+
     $app = new Silex\Application();
 
     $app['debug'] = true;
