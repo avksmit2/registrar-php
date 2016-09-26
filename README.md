@@ -1,31 +1,37 @@
-# _{Word Frequency}_
+# _{Hair Salon}_
 
-#### _An application that returns the number of times a word is repeated in a phrase, {September 16, 2016}_
+#### _An application that holds a hair salon's stylists and their individual clients, {September 23, 2016}_
 
 #### By _**Angela Smith**_
 
 ## Description
 
-_{This website will allow a user to input a word and a phrase; the program will then display how many times that word was used in that phrase.}_
+_{A mySQL database holds a salon's stylists and their individual clients.  The user can see a list of the stylists and the clients that belong to them. New stylists may be added and new clients to any stylist.}_
 
 ## Specifications
 
 | Behavior      | Input       |Output|
 | ------------- |-------------| -----|
-| Behavior 1 | Input 1 | Output 1 |
-| Behavior 2 | Input 2 | Output 2 |
-| Behavior 3 | Input 3 | Output 3 |
+| Behavior |Input | Output |
+| Behavior |Input | Output |
+| Behavior |Input | Output |
 
 
 ## Setup/Installation Requirements
 
-_In Terminal:_
+* Clone the repository.
+* Type in _"apachectl start"_ in the command line.
+* Open a browser and navigate to _localhost:8080/phpmyadmin_, enter username: _"root"_ and password: _"root"_ if prompted.
+* Go to the Import tab and under "File to import", browse computer to project, select the zip file and press "Go".
+* Using the command line, navigate to the project's root directory.
+* Install dependencies by running _$composer install_.
+* Navigate to the /web directory and start a local server with _$php -S localhost:8000_.
+* Open a browser and go to the address http://localhost:8000 to view the application.
 
-* Clone the repository
-* Using the command line, navigate to the project's root directory
-* Install dependencies by running $ composer install
-* Navigate to the /web directory and start a local server with $ php -S localhost:8000
-* Open a browser and go to the address http://localhost:8000 to view the application\
+* If there is no file to import, type in the command line _"mysql.server start"_ and then _"mysql -uroot -proot"_.
+* Type in _"CREATE DATABASE hair_salon;"_.
+* Type in _"USE hair_salon;"_.
+* Create the tables by typing in _"CREATE TABLE stylists (id serial PRIMARY KEY, name VARCHAR(255));"_ and _"CREATE TABLE clients (id serial PRIMARY KEY, stylist_id INT, name VARCHAR(255), phone VARCHAR(255), last_visit DATE, notes VARCHAR(255));"_.
 
 ## Known Bugs
 
@@ -37,13 +43,12 @@ _Angela Smith: avksmit2@gmail.com_
 
 ## Technologies Used
 
-_HTML,
-CSS,
-Bootstrap,
-PHP,
+_PHP,
+mySQL,
 Silex,
 Twig,
-PHPUnit_
+PHPUnit,
+Bootstrap,_
 
 ### License
 

@@ -1,9 +1,20 @@
 <?php
-    require_once __DIR__. "/../src/FileName.php";
+    /**
+    * @backupGlobals disabled
+    * @backupStaticAttributes disabled
+    */
 
-    class TemplateTest extends PHPUnit_Framework_TestCase
+    require_once "src/***.php";
+    require_once "src/***.php";
+
+    $server = 'mysql:host=localhost;dbname=***_test';
+    $username = 'root';
+    $password = 'root';
+    $DB = new PDO($server, $username, $password);
+
+    class *** extends PHPUnit_Framework_TestCase
     {
-        function test_methodName_objectiveHere()
+        function test_***()
         {
             // Assemble
             $test_Variable = new Template("Argument Here");

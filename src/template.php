@@ -1,11 +1,11 @@
 <?php
-    class //////////
+class
+{
+  private ;
+
+    function __construct()
     {
-      private //////;
 
-        function __construct()
-        {
-
-        }
     }
+}
 ?>
