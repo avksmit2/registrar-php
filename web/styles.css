@@ -1,4 +1,19 @@
-.courseInfo {
+.header {
+    margin: 2%;
+    color: green;
+}
+
+.classInfo {
     font-style: italic;
     text-decoration: underline;
+}
+
+.box {
+    border: dotted gray;
+    margin: 2%;
+    padding: 2%;
+}
+
+li {
+    font-size: 1.5em;
 }
