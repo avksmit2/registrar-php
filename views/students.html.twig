@@ -11,7 +11,7 @@
                 <h3>Here are all of the current students:</h3>
                 <ul>
                     {% for student in students %}
-                        <li><a href="/students_courses/{{ student.getId }}">{{ student.getName }}, Enrollment Date: {{ student.getEnrollDate }}</a></li>
+                        <li><a href="/student_courses/{{ student.getId }}">{{ student.getName }}, Enrollment Date: {{ student.getEnrollDate }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}

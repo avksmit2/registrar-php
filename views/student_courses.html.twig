@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/styles.css" rel="stylesheet">
+        <title>University Registrar</title>
+    </head>
+    <body>
+        <h1 class="well text-center">Welcome to Epicodus University!</h1>
+        <div class="container">
+            <h2>Courses {{ student.getName }}, enroll date of {{ student.getEnrollDate }} is enrolled in:</h2>
+            {% if courses is not empty %}
+                <ul>
+                    {% for course in courses %}
+                        <li><a href="/course/{{ course.getId }}">{{ course.getName }}, Course # {{ course.getCourseNumber }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <h3>Add courses to this student:</h3>
+            <form action="/add_courses" method="post">
+                <input id="student_id" name="student_id" type="hidden" value="{{ student.getId }}">
+                <label for="course_id">Select a course:</label>
+                <select id="course_id" name="course_id" type="text">
+                    {% for course in all_courses %}
+                        <option value="{{ course.getId }}">{{ course.getName }}, Course # {{ course.getCourseNumber }}</option>
+                    {% endfor %}
+                </select>
+                <button class="btn btn-info" type="submit">Add course</button>
+            </form>
+
+            <h3>Update student:</h3>
+            <form action="/update_student/{{ student.getId }}" method="post">
+                <input name="_method" type="hidden" value="patch">
+                <label for="new_student_name">Student Name</label>
+                <input id="new_student_name" name="new_student_name" value="{{ student.getName }}" type="text" required>
+
+                <label for="new_enroll_date">Enrollment Date</label>
+                <input id="new_enroll_date" name="new_enroll_date" value="{{ student.getEnrollDate }}" type="text">
+
+                <button class="btn btn-info" type="submit">Update Student</button>
+            </form>
+
+            <form action="/delete_student/{{ student.getId }}" method="post">
+                <input name="_method" type="hidden" value="delete">
+                <button class="btn btn-danger" type="submit">Delete Student</button>
+            </form>
+            <h3><a href="/">Home</a></h3>
+        </div>
+    </body>
+</html>

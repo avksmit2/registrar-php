@@ -11,7 +11,7 @@
             {% if students is not empty %}
                 <ul>
                     {% for student in students %}
-                        <li><a href="/student/{{ student.getId }}">{{ student.getName }}, enrolled on {{ student.getEnrollDate }}</a></li>
+                        <li><a href="/student_courses/{{ student.getId }}">{{ student.getName }}, enrolled on {{ student.getEnrollDate }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}

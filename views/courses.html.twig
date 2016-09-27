@@ -11,12 +11,12 @@
                 <h2>Here are all of the current courses:</h2>
                 <ul>
                     {% for course in courses %}
-                        <li><a href="/courses_students/{{ course.getId }}">{{ course.getName }}, Course Number: {{ course.getCourseNumber }}</a></li>
+                        <li><a href="/course_students/{{ course.getId }}">{{ course.getName }}, Course Number: {{ course.getCourseNumber }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}
 
-        <form action="/courses_add" method="post">
+        <form action="/course_add" method="post">
             <h3>Add a course</h3>
             <div class="form-group">
                 <label for="course_name">Course Name:</label>
@@ -31,7 +31,7 @@
             <button class="btn btn-info" type="submit">Add Course</button>
         </form>
 
-        <form action="/courses_delete">
+        <form action="/course_delete">
             <button class="btn btn-danger" type="submit">Delete All Courses</button>
         </form>
 
