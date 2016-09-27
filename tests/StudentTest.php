@@ -26,7 +26,7 @@
             $name = "Becky";
             $enroll_date = "2016-12-03";
             $id = 1;
-            $test_student = new Template($name, $enroll_date, $id);
+            $test_student = new Student($name, $enroll_date, $id);
 
             // Act
             $result = $test_student->getName();
