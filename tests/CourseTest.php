@@ -20,34 +20,36 @@
           Student::deleteAll();
         }
 
-        function testGetName()
+        function testSetName()
         {
             // Assemble
             $name = "Biology";
             $course_number = "BS101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
+            $test_course->setName("Biology 101");
 
             // Act
             $result = $test_course->getName();
 
             // Assert
-            $this->assertEquals("Biology", $result);
+            $this->assertEquals("Biology 101", $result);
         }
 
-        function testGetCourseNumber()
+        function testSetCourseNumber()
         {
             // Assemble
             $name = "Biology";
             $course_number = "BS101";
             $id = 1;
             $test_course = new Course($name, $course_number, $id);
+            $test_course->setCourseNumber("BS101N");
 
             // Act
             $result = $test_course->getCourseNumber();
 
             // Assert
-            $this->assertEquals("BS101", $result);
+            $this->assertEquals("BS101N", $result);
         }
 
         function testGetId()
