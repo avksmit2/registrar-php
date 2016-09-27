@@ -75,6 +75,13 @@ class Course
         $GLOBALS['DB']->exec("DELETE FROM courses;");
     }
 
+    function update($new_name, $new_number)
+    {
+        $GLOBALS['DB']->exec("UPDATE courses SET course_name = '{$new_name}', course_number = '{$new_number}' WHERE id = {$this->getId()};");
+        $this->setName($new_name);
+        $this->setCourseNumber($new_number);
+    }
+
     function addStudent($student)
     {
         $GLOBALS['DB']->exec("INSERT INTO courses_students (course_id, student_id) VALUES ({$this->getId()}, {$student->getId()});");

@@ -83,7 +83,7 @@
             $this->assertEquals($test_course, $result[0]);
         }
 
-        function getAll()
+        function testGetAll()
         {
             // Assemble
             $name = "Biology";
@@ -102,7 +102,7 @@
             $result = Course::getAll();
 
             // Assert
-            $this->assertEquals([$test_course, $test_course2], $result[0]);
+            $this->assertEquals([$test_course, $test_course2], $result);
         }
 
         function testDeleteAll()
@@ -126,6 +126,44 @@
 
             // Assert
             $this->assertEquals([], $result);
+        }
+
+        function testNameUpdate()
+        {
+            // Assemble
+            $name = "Biology";
+            $course_number = "BS101";
+            $id = null;
+            $test_course = new Course($name, $course_number, $id);
+            $test_course->save();
+
+            $new_name = "Biology 101";
+            $new_number = "BS101N";
+
+            //Act
+            $test_course->update($new_name, $new_number);
+
+            //Assert
+            $this->assertEquals("Biology 101", $test_course->getName());
+        }
+
+        function testNumberUpdate()
+        {
+            // Assemble
+            $name = "Biology";
+            $course_number = "BS101";
+            $id = null;
+            $test_course = new Course($name, $course_number, $id);
+            $test_course->save();
+
+            $new_name = "Biology 101";
+            $new_number = "BS101N";
+
+            //Act
+            $test_course->update($new_name, $new_number);
+
+            //Assert
+            $this->assertEquals("BS101N", $test_course->getCourseNumber());
         }
 
         function testFind()

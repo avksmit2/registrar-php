@@ -57,6 +57,18 @@ class Student
         return $students;
     }
 
+    static function deleteAll()
+    {
+        $GLOBALS['DB']->exec("DELETE FROM students;");
+    }
+
+    function update($new_name, $new_date)
+    {
+        $GLOBALS['DB']->exec("UPDATE students SET student_name = '{$new_name}', enroll_date = '{$new_date}' WHERE id = {$this->getId()};");
+        $this->setName($new_name);
+        $this->setEnrollDate($new_date);
+    }
+
     static function find($search_id)
     {
         $found_student = null;
@@ -70,9 +82,5 @@ class Student
         return $found_student;
     }
 
-    static function deleteAll()
-    {
-        $GLOBALS['DB']->exec("DELETE FROM students;");
-    }
 }
 ?>

@@ -67,7 +67,7 @@
             $this->assertEquals(1, $result);
         }
 
-        function save()
+        function testSave()
         {
             // Assemble
             $name = "Becky";
@@ -83,7 +83,7 @@
             $this->assertEquals($test_student, $result[0]);
         }
 
-        function getAll()
+        function testGetAll()
         {
             // Assemble
             $name = "Becky";
@@ -105,7 +105,7 @@
             $this->assertEquals([$test_student, $test_student2], $result);
         }
 
-        function deleteAll()
+        function testDeleteAll()
         {
             // Assemble
             $name = "Becky";
@@ -128,7 +128,45 @@
             $this->assertEquals([], $result);
         }
 
-        function find()
+        function testNameUpdate()
+        {
+            // Assemble
+            $name = "Becky";
+            $enroll_date = "2016-12-03";
+            $id = null;
+            $test_student = new Student($name, $enroll_date, $id);
+            $test_student->save();
+
+            $new_name = "Rebecca";
+            $new_enroll_date = "2017-02-13";
+
+            // Act
+            $test_student->update($new_name, $new_enroll_date);
+
+            // Assert
+            $this->assertEquals("Rebecca", $test_student->getName());
+        }
+
+        function testDateUpdate()
+        {
+            // Assemble
+            $name = "Becky";
+            $enroll_date = "2016-12-03";
+            $id = null;
+            $test_student = new Student($name, $enroll_date, $id);
+            $test_student->save();
+
+            $new_name = "Rebecca";
+            $new_enroll_date = "2017-02-13";
+
+            // Act
+            $test_student->update($new_name, $new_enroll_date);
+
+            // Assert
+            $this->assertEquals("2017-02-13", $test_student->getEnrollDate());
+        }
+
+        function testFind()
         {
             // Assemble
             $name = "Becky";
@@ -147,7 +185,7 @@
             $result = Student::find($test_student->getId());
 
             // Assert
-            $this->assertEquals([], $result);
+            $this->assertEquals($test_student, $result);
         }
     }
 
