@@ -82,5 +82,23 @@ class Student
         return $found_student;
     }
 
+    function addCourse($course)
+    {
+        $GLOBALS['DB']->exec("INSERT INTO courses_students (course_id, student_id) VALUES ({$course->getId()}, {$this->getId()});");
+    }
+
+    function getCourses()
+    {
+        $courses = array();
+        $returned_courses = $GLOBALS['DB']->query("SELECT courses.* FROM students JOIN courses_students ON (courses_students.student_id = students.id) JOIN courses ON (courses.id = courses_students.course_id) WHERE students.id = {$this->getId()};");
+        foreach($returned_courses as $course) {
+            $course_name = $course['course_name'];
+            $course_number = $course['course_number'];
+            $id = $course['id'];
+            $new_course = new Course($course_name, $course_number, $id);
+            array_push($courses, $new_course);
+        }
+        return $courses;
+    }
 }
 ?>
