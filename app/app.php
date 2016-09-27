@@ -79,7 +79,7 @@
         $course = Course::find($id);
         $course->delete();
 
-        return $app['twig']->render("index.html.twig");
+        return $app['twig']->render("courses.html.twig", array('courses' => Course::getAll()));
     });
 
     $app->get("/students", function() use ($app) {
@@ -118,7 +118,7 @@
     $app->patch("/update_student/{id}", function($id) use ($app) {
         $student = Student::find($id);
         $new_student_name = $_POST['new_student_name'];
-        $new_student_number = $_POST['new_enroll_date'];
+        $new_enroll_date = $_POST['new_enroll_date'];
         $student->update($new_student_name, $new_enroll_date);
         $student->save();
 
@@ -129,7 +129,7 @@
         $student = Student::find($id);
         $student->delete();
 
-        return $app['twig']->render("index.html.twig");
+        return $app['twig']->render("students.html.twig", array('students' => Student::getAll()));
     });
 
     return $app;

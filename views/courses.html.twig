@@ -5,8 +5,8 @@
         <title>University Registrar</title>
     </head>
     <body>
-        <h1 class="well text-center">Welcome to Epicodus University!</h1>
-        <div class="container">
+        <h1 class="header text-center">Welcome to Epicodus University!</h1>
+        <div class="container well">
             {% if courses is not empty %}
                 <h2>Here are all of the current courses:</h2>
                 <ul>
@@ -16,26 +16,28 @@
                 </ul>
             {% endif %}
 
-        <form action="/course_add" method="post">
-            <h3>Add a course</h3>
-            <div class="form-group">
-                <label for="course_name">Course Name:</label>
-                <input id="course_name" name="course_name" type="text" required>
+            <div class="box">
+                <form action="/courses_add" method="post">
+                    <h3>Add a course</h3>
+                    <div class="form-group">
+                        <label for="course_name">Course Name:</label>
+                        <input id="course_name" name="course_name" type="text" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course_number">Course Number:</label>
+                        <input id="course_number" name="course_number" type="text">
+                    </div>
+
+                    <button class="btn btn-info" type="submit">Add Course</button>
+                </form>
             </div>
 
-            <div class="form-group">
-                <label for="course_number">Course Number:</label>
-                <input id="course_number" name="course_number" type="text">
-            </div>
+            <form action="/courses_delete">
+                <button class="btn btn-danger" type="submit">Delete All Courses</button>
+            </form>
 
-            <button class="btn btn-info" type="submit">Add Course</button>
-        </form>
-
-        <form action="/course_delete">
-            <button class="btn btn-danger" type="submit">Delete All Courses</button>
-        </form>
-
-        <h3><a href="/">Home</a></h3>
+            <h3><a href="/">Home</a></h3>
 
         </div>
     </body>
