@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/styles.css" rel="stylesheet">
+        <title>University Registrar</title>
+    </head>
+    <body>
+        <h1 class="well text-center">Welcome to Epicodus University!</h1>
+        <div class="container">
+            {% if courses is not empty %}
+                <ul>
+                    <h3>Here are all of the current courses:</h3>
+                    {% for course in courses %}
+                        <li>{{ course.getName }}, Course Number: {{ course.getCourseNumber }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+        <form action="/courses_add" method="post">
+            <h3>Add a course</h3>
+            <div class="form-group">
+                <label for="course_name">Course Name:</label>
+                <input id="course_name" name="course_name" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="course_number">Course Number:</label>
+                <input id="course_number" name="course_number" type="text">
+            </div>
+
+            <button class="btn btn-info" type="submit">Add Course</button>
+        </form>
+
+        <form action="/courses_delete">
+            <button class="btn btn-danger" type="submit">Delete All Courses</button>
+        </form>
+
+        <h3><a href="/">Home</a></h3>
+
+        </div>
+    </body>
+</html>
