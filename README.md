@@ -1,20 +1,29 @@
-# _{Hair Salon}_
+# _University Registrar_
 
-#### _An application that holds a hair salon's stylists and their individual clients, {September 23, 2016}_
+#### _An application that shows students and courses at a university, {September 27, 2016}_
 
 #### By _**Angela Smith**_
 
 ## Description
 
-_{A mySQL database holds a salon's stylists and their individual clients.  The user can see a list of the stylists and the clients that belong to them. New stylists may be added and new clients to any stylist.}_
+_{This application will show the courses and students at a university. The user can see a course and all of the students enrolled in it as well as a student and all of the courses they are enrolled in. A student can be added to a course and a course can be added to a student.}_
 
 ## Specifications
 
 | Behavior      | Input       |Output|
 | ------------- |-------------| -----|
-| Behavior |Input | Output |
-| Behavior |Input | Output |
-| Behavior |Input | Output |
+| This application will allow a user to add a student and return the information added | "Becky" | "Becky" |
+| This application will allow a user to add students and return all of the current students | "Becky", "Francis" | ["Becky", "Francis"] |
+| This application will allow a user to delete all of the students | "Becky" | "" |
+| This application will allow a user to update a students | "Becky", "Rebecca" | "Rebecca" |
+| This application will allow a user to add a course and return the information added | "Biology" | "Biology" |
+| This application will allow a user to add courses and return all of the current courses | "Biology", "English" | ["Biology", "English"] |
+| This application will allow a user to delete all of the courses | "Biology" | "" |
+| This application will allow a user to update a course | "Biology", "Biology 101" | "Biology 101" |
+| This application will allow a user to add courses to a student and return all of the courses the student is enrolled in | "Biology", "English" | ["Biology", "English"] |
+| This application will allow a user to add students to a course and return all of the students enrolled in the course | "Becky", "Francis" | ["Becky", "Francis"] |
+| This application will allow a user to delete a student from a course and return all of the students enrolled in the course | "Becky", "Francis" | ["Becky"] |
+| This application will allow a user to delete a course from a student and return all of the courses the student is enrolled in | "Biology", "English" | ["Biology"] |
 
 
 ## Setup/Installation Requirements
@@ -27,11 +36,6 @@ _{A mySQL database holds a salon's stylists and their individual clients.  The u
 * Install dependencies by running _$composer install_.
 * Navigate to the /web directory and start a local server with _$php -S localhost:8000_.
 * Open a browser and go to the address http://localhost:8000 to view the application.
-
-* If there is no file to import, type in the command line _"mysql.server start"_ and then _"mysql -uroot -proot"_.
-* Type in _"CREATE DATABASE hair_salon;"_.
-* Type in _"USE hair_salon;"_.
-* Create the tables by typing in _"CREATE TABLE stylists (id serial PRIMARY KEY, name VARCHAR(255));"_ and _"CREATE TABLE clients (id serial PRIMARY KEY, stylist_id INT, name VARCHAR(255), phone VARCHAR(255), last_visit DATE, notes VARCHAR(255));"_.
 
 ## Known Bugs
 
