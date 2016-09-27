@@ -16,10 +16,12 @@ _{This application will show the courses and students at a university. The user 
 | This application will allow a user to add students and return all of the current students | "Becky", "Francis" | ["Becky", "Francis"] |
 | This application will allow a user to delete all of the students | "Becky" | "" |
 | This application will allow a user to update a students | "Becky", "Rebecca" | "Rebecca" |
+| This application will return a specific student user searches for | "Becky", "Francis" | "Becky" |
 | This application will allow a user to add a course and return the information added | "Biology" | "Biology" |
 | This application will allow a user to add courses and return all of the current courses | "Biology", "English" | ["Biology", "English"] |
 | This application will allow a user to delete all of the courses | "Biology" | "" |
 | This application will allow a user to update a course | "Biology", "Biology 101" | "Biology 101" |
+| This application will return a specific course user searches for | "Biology", "English" | "Biology" |
 | This application will allow a user to add courses to a student and return all of the courses the student is enrolled in | "Biology", "English" | ["Biology", "English"] |
 | This application will allow a user to add students to a course and return all of the students enrolled in the course | "Becky", "Francis" | ["Becky", "Francis"] |
 | This application will allow a user to delete a student from a course and return all of the students enrolled in the course | "Becky", "Francis" | ["Becky"] |

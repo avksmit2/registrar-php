@@ -8,10 +8,10 @@
         <h1 class="well text-center">Welcome to Epicodus University!</h1>
         <div class="container">
             {% if courses is not empty %}
+                <h3>Here are all of the current courses:</h3>
                 <ul>
-                    <h3>Here are all of the current courses:</h3>
                     {% for course in courses %}
-                        <li>{{ course.getName }}, Course Number: {{ course.getCourseNumber }}</li>
+                        <li><a href="/courses_students/{{ course.getId }}">{{ course.getName }}, Course Number: {{ course.getCourseNumber }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}

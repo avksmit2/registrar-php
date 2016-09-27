@@ -127,6 +127,28 @@
             // Assert
             $this->assertEquals([], $result);
         }
+
+        function find()
+        {
+            // Assemble
+            $name = "Becky";
+            $enroll_date = "2016-12-03";
+            $id = null;
+            $test_student = new Student($name, $enroll_date, $id);
+            $test_student->save();
+
+            $name2 = "Francis";
+            $enroll_date2 = "2016-09-27";
+            $id2 = null;
+            $test_student2 = new Student($name2, $enroll_date2, $id2);
+            $test_student2->save();
+
+            // Act
+            $result = Student::find($test_student->getId());
+
+            // Assert
+            $this->assertEquals([], $result);
+        }
     }
 
 
