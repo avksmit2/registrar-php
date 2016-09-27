@@ -238,8 +238,28 @@
             // Assert
             $this->assertEquals($test_course->getStudents(), [$test_student, $test_student2]);
         }
+
+        function testDelete()
+        {
+            // Assemble
+            $name = "Biology";
+            $course_number = "BS101";
+            $id = null;
+            $test_course = new Course($name, $course_number, $id);
+            $test_course->save();
+
+            $name2 = "English";
+            $course_number2 = "LE101";
+            $id2 = null;
+            $test_course2 = new Course($name2, $course_number2, $id2);
+            $test_course2->save();
+
+            // Act
+            $test_course->delete();
+            $result = Course::getAll();
+
+            // Assert
+            $this->assertEquals([$test_course2], $result);
+        }
     }
-
-
-
 ?>

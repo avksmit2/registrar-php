@@ -238,8 +238,28 @@
             // Assert
             $this->assertEquals($test_student->getCourses(), [$test_course, $test_course2]);
         }
+
+        function testDelete()
+        {
+            // Assemble
+            $name = "Becky";
+            $enroll_date = "2016-12-03";
+            $id = null;
+            $test_student = new Student($name, $enroll_date, $id);
+            $test_student->save();
+
+            $name2 = "Francis";
+            $enroll_date2 = "2016-09-27";
+            $id2 = null;
+            $test_student2 = new Student($name2, $enroll_date2, $id2);
+            $test_student2->save();
+
+            // Act
+            $test_student->delete();
+            $result = Student::getAll();
+
+            // Assert
+            $this->assertEquals([$test_student2], $result);
+        }
     }
-
-
-
 ?>
