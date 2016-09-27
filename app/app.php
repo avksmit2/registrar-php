@@ -34,6 +34,7 @@
         $course_name = $_POST['course_name'];
         $course_number = $_POST['course_number'];
         $course = new Course($course_name, $course_number);
+        $course->save();
 
         return $app['twig']->render("courses.html.twig", array('courses' => Course::getAll()));
     });
